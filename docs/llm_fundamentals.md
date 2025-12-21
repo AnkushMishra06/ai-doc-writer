@@ -176,13 +176,12 @@ Qualitative evaluation includes:
 
 ### Advantages and Disadvantages
 
-Advantages:
-
+#### Advantages:
 - compact representation of discrete tokens
 - capture semantic structure
 - learnable jointly with model
 - support differentiable learning
-  Disadvantages:
+#### Disadvantages:
 - require large data to learn high-quality embeddings
 - interpretability is limited
 - embedding space meaning depends on objective
