@@ -86,3 +86,36 @@ If functions or classes from the same repository are split across training and e
 - No code entity may appear in more than one dataset split.
 - Repository and file identifiers will be tracked.
 - Split mapping will be stored as metadata for reproducibility.
+
+
+## Candidate Repository Sources
+The following repos are strong candidates for dataset extraction. These projects are written primarily in Python, follow established documentation conventions, and include substantial human-authored docstrings.
+
+### Preliminery list of potential repositories
+- Numpy
+- Pandas
+- Requests
+- Flask
+- FastAPI
+- Scikit-learn
+- Scrapy
+- Apache Airflow
+- Celery
+- Matplotlib
+- Pytorch (selected Python modules only)
+- Click (CLI utilities)
+
+## Licensing Compliance Requirements
+Only repositories with permissive open-source licenses will be included in the dataset.
+Accepted license categories:
+- MIT
+- Apache 2.0
+- BSD-2-Clause
+- BSD-3-Clause
+
+Excluded licenses due to strong copyleft restrictions:
+- GPL family
+- AGPL
+- LGPL (conditional exclusion depending on linking and redistribution requirements)
+
+License metadata shall be recorded for each repository used. The ingestion pipeline will verify and store license information to ensure traceability and prevent future compliance risk.
