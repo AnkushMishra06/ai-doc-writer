@@ -61,7 +61,7 @@ Ground truth documentation refers to the human-authored docstrings present in so
 - Expressed in natural language rather than generated from static code comments
 
 ### Exclusions
-These does not qualify as ground truth:
+This does not qualify as ground truth:
 - Auto-generated documentation comments
 - Inline comments that do not follow docstring conventions
 - Documentation copied or mirrored from external sources without modification
