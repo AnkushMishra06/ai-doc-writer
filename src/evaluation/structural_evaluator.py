@@ -1,20 +1,23 @@
 from typing import Dict, List, Tuple
 import re
 
-SUMMARY_ERROR = "MISSING OR INVALID SUMMARY"
-MISSING_PARAMS_SECTION = "MISSING PARAMETER SECTION"
-MISSING_PARAM_DOC = "MISSING PARAMETER DOC"
-HALLUCINATED_PARAM = "HALLUCINATED PARAMETER"
-MISSING_RETURNS_SECTION = "MISSING RETURN SECTION"
-INVALID_SECTION_ORDER = "INVALID SECTION ORDER"
+SUMMARY_ERROR = "MISSING_OR_INVALID_SUMMARY"
+MISSING_PARAMS_SECTION = "MISSING_PARAMETER_SECTION"
+MISSING_PARAM_DOC = "MISSING_PARAMETER_DOC"
+HALLUCINATED_PARAM = "HALLUCINATED_PARAMETER"
+MISSING_RETURNS_SECTION = "MISSING_RETURN_SECTION"
+INVALID_SECTION_ORDER = "INVALID_SECTION_ORDER"
 
 def validate_summary(sections, errors):
+    if not sections or not isinstance(sections, dict):
+        errors.append(SUMMARY_ERROR)
+        return
     summary = sections.get("summary", "").strip()
     if not summary:
         errors.append(SUMMARY_ERROR)
         return
-    # must be single logical sentence (heuristic)
-    if summary.count("\n") > 0:
+    # must not start with section header
+    if summary.lower().startswith(("parameters", "returns")):
         errors.append(SUMMARY_ERROR)
 
 def extract_documented_parameters(parameters_block: str) -> List[str]:
