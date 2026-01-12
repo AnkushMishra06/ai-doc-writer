@@ -28,6 +28,7 @@ Each character is treated as token.
 
 - No vocabulary explosion problems as limited number of tokens possible.
 - Tiny vocabulary size
+- Vocabulary remains constant
 
 #### Disadvantages:
 
@@ -37,7 +38,7 @@ Each character is treated as token.
 
 ### Word level
 
-Tokens correspond to complete words.
+Tokens correspond to complete words. same as splitting words of a text.
 
 #### Advantages:
 
@@ -47,7 +48,7 @@ Tokens correspond to complete words.
 #### Disadvantages:
 
 - Requires very large vocabulary
-- Fails on unseen or rare words (vocabulary exploaion problem)
+- Fails on unseen or rare words (vocabulary explosion problem)
 - Language-dependent rules
 
 ### Subword level
@@ -56,7 +57,7 @@ Subword methods split text into fragments smaller than words but larger than cha
 
 #### Advantages:
 
-- avoid OOV failures
+- avoid OOV(Out Of Vocabulary) failures
 - share fragments across related words
 - handle rare words efficiently
 - compress vocabulary
